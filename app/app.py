@@ -11,7 +11,7 @@ from catboost import CatBoostClassifier
 def load_model(model_name):
     if model_name == "CatBoost":
         model = CatBoostClassifier()
-        model.load_model("D:/ML/rgr_ml/models/catboost.cbm")
+        model.load_model("models/catboost.cbm")
         return model
     with open(model_name, "rb") as f:
         return pickle.load(f)
@@ -58,7 +58,7 @@ elif menu == "О датасете":
 
 
 elif menu == "Визуализации":
-    df = load_data("D:/ML/rgr_ml/data/neo_task.csv")
+    df = load_data("data/neo_task.csv")
     st.title("Анализ данных")
 
     # Обработка пропусков (при необходимости)
@@ -122,15 +122,15 @@ elif menu == "Предсказание":
     @st.cache_resource
     def load_selected_model(name):
         if name == "KNN":
-            return load_model("D:/ML/rgr_ml/models/knn_model.pkl")
+            return load_model("models/knn_model.pkl")
         elif name == "Boosting":
-            return load_model("D:/ML/rgr_ml/models/boosting.pkl")
+            return load_model("models/boosting.pkl")
         elif name == "CatBoost":
             return load_model("CatBoost")
         elif name == "Bagging":
-            return load_model("D:/ML/rgr_ml/models/bagging.pkl")
+            return load_model("models/bagging.pkl")
         elif name == "Stacking":
-            return load_model("D:/ML/rgr_ml/models/stacking.pkl")
+            return load_model("models/stacking.pkl")
 
         else:
             return None  # на случай передачи неизвестного имени
