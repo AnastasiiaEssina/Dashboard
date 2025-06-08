@@ -23,7 +23,7 @@
 ```
 rgr_ml/
 ├── app/
-│   └── app.py               # Основное Streamlit-приложение
+│   └── app.py             
 ├── models/
 │   ├── knn_model.pkl
 │   ├── bagging.pkl
@@ -31,7 +31,7 @@ rgr_ml/
 │   ├── stacking.pkl
 │   └── catboost_model.cbm
 ├── data/
-│   └── neo_task.csv         # Предобработанный CSV-файл
+│   └── neo_task.csv        
 ├── requirements.txt
 └── README.md
 ```
